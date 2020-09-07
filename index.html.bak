@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus�">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ 
+	<script src="js/jquery.js"></script>
+	<script src="js/center.js"></script>
+	<script>
+		
+	
+		divTable.newTableDiv();
+			divTable.insertTableDivRow();
+				divTable.insertTableDivTitle("Nombre");
+				divTable.insertTableDivTitle("Apellido");
+			divTable.endTableDiv();
+			
+			divTable.insertTableDivRow();
+				divTable.insertTableDivCol("Mauricio");
+				divTable.insertTableDivCol("West");
+			divTable.endTableDiv();
+		divTable.endTableDiv();
+
+		
+			$(document).ready(function(){
+			$('#content').append("hola");
+			});
+
+	</script>
+	</head>
+	<body>
+	 Prueba
+	<div id="content"></div>
+
+	</body>
+</html>

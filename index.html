@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus�">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link rel="STYLESHEET" href="css/default.css" type="text/css">
+  <title>Mi Web Links</title>
+
+
+ 
+	<script src="js/jquery.js"></script>
+	<script src="js/divTableCreator.js"></script>
+	<script src="js/divTableCreatorExtend.js"></script>
+	<script>
+		
+		divC2 = new divTableCreator();
+			divC2.insertTableDivRow();
+				divC2.insertTableDivTitle("prueba1");
+				divC2.insertTableDivTitle("prueba2");
+			divC2.endTableDiv();
+				
+			divC2.insertTableDivRow();
+				divC2.insertTableDivCol("1");
+				divC2.insertTableDivCol("2");
+			divC2.endTableDiv();
+		divC2.endTableDiv();
+
+		divC1 = new divTableCreator();
+		
+		
+		divC1.insertTableDivRow();
+		divC1.insertTableDivTitle("Nombre");
+		divC1.insertTableDivTitle("Apellido");
+		divC1.insertTableDivTitle("Nombre");
+
+		divC1.endTableDiv();
+			
+		divC1.insertTableDivRow();
+		divC1.insertTableDivCol("Mauricio");
+		divC1.insertTableDivCol("West");
+		divC1.insertTableDivCol("pablo");
+
+		divC1.endTableDiv();
+		divC1.insertTableDivRow();
+		divC1.insertTableDivCol(divC2.getReturnStr());
+		divC1.insertTableDivCol("1");
+		divC1.insertTableDivCol("1");
+
+		divC1.endTableDiv();
+		divC1.endTableDiv();
+
+		divC3 = new divTableCreatorExtend();
+		divC3.createMultiHeader("Nombre,Apellido,URL");
+
+		/*
+			$(document).ready(function(){
+			$('#content').append(divC1.getReturnStr());
+			});*/
+			console.log(divC3.getHtmlResult());
+			$(document).ready(function(){
+			$('#content2').append(divC3.getHtmlResult());
+			});
+
+	</script>
+	</head>
+	<body>
+	 Prueba
+	<!-- <div id="content"></div> -->
+	<div id="content2"></div>
+	</body>
+</html>
