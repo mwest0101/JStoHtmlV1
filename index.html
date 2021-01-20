@@ -16,52 +16,28 @@
 	<script src="js/divTableCreatorExtend.js"></script>
 	<script>
 		
-		divC2 = new divTableCreator();
-			divC2.insertTableDivRow();
-				divC2.insertTableDivTitle("prueba1");
-				divC2.insertTableDivTitle("prueba2");
-			divC2.endTableDiv();
-				
-			divC2.insertTableDivRow();
-				divC2.insertTableDivCol("1");
-				divC2.insertTableDivCol("2");
-			divC2.endTableDiv();
-		divC2.endTableDiv();
-
-		divC1 = new divTableCreator();
+		divC1 = new divTableCreatorExtend();		
+		divC1.createMultiCol(["nombre","url","test"]);
+		divC1.getEndTable();
 		
+		divC2 = new divTableCreatorExtend();		
+		divC2.createMultiHead(["nombre","url","test"]);
+		divC2.createMultiCol(["nombre","url","test"]);
+		divC2.getEndTable();
 		
-		divC1.insertTableDivRow();
-		divC1.insertTableDivTitle("Nombre");
-		divC1.insertTableDivTitle("Apellido");
-		divC1.insertTableDivTitle("Nombre");
+		divC3 = new divTableCreatorExtend();		
+		divC3.createMultiCol(["nombre","url","test"]);
+		divC3.getEndTable();
 
-		divC1.endTableDiv();
-			
-		divC1.insertTableDivRow();
-		divC1.insertTableDivCol("Mauricio");
-		divC1.insertTableDivCol("West");
-		divC1.insertTableDivCol("pablo");
+		divC4 = new divTableCreatorExtend("hide");		
+		divC4.createMultiCol([divC1.gr(),divC2.gr(),divC3.gr()]);
+		divC4.getEndTable();
+		
 
-		divC1.endTableDiv();
-		divC1.insertTableDivRow();
-		divC1.insertTableDivCol(divC2.getReturnStr());
-		divC1.insertTableDivCol("1");
-		divC1.insertTableDivCol("1");
 
-		divC1.endTableDiv();
-		divC1.endTableDiv();
-
-		divC3 = new divTableCreatorExtend();
-		divC3.createMultiHeader("Nombre,Apellido,URL");
-
-		/*
-			$(document).ready(function(){
-			$('#content').append(divC1.getReturnStr());
-			});*/
 			console.log(divC3.getHtmlResult());
 			$(document).ready(function(){
-			$('#content2').append(divC3.getHtmlResult());
+			$('#content2').append(divC4.gr());
 			});
 
 	</script>

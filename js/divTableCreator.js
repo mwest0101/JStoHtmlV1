@@ -2,18 +2,31 @@ class divTableCreator {
     
     
 
-    constructor(){
+    constructor(isVisible){
         console.log("---constructor()--");
         this.returnStr = "";
         this.endln="\n";
+        this.isHide="visible";
+        this.setIsTableHide(isVisible);
         this.newTableDiv();
     };
 
-    newTableDiv(){
-        console.log("---newTableDiv()---");
-        this.setReturnStr("<div class=\"rTable\">"+this.endln);	
+    newTableDiv(){          
+        if (this.getIsTableHide()=="hide"){
+            this.setReturnStr("<div class=\"rHideTable\">"+this.endln);	
+            
+        }else{
+            this.setReturnStr("<div class=\"rTable\">"+this.endln);	
+            
+        }
     }
 
+    setIsTableHide(value){    
+        this.isHide=value;        
+    }
+    getIsTableHide(){    
+        return this.isHide;        
+    }
     setReturnStr(text){
         console.log("---setReturnStr()---");
         this.returnStr=text;
@@ -31,18 +44,18 @@ class divTableCreator {
 
     insertTableDivRow(){
         console.log("---insertTableDivRow()---");
-        this.addStrToTable("<div class=\"rTableRow\">"+this.endln);	
+        this.addStrToTable("<div class=\"rTable Row\">"+this.endln);	
     }
 
     insertTableDivTitle(text){
         console.log("---insertTableDivTitle()---");
-        this.addStrToTable("<div class=\"rTableHead\"><strong>"+text+"</strong></div>"+this.endln);			
+        this.addStrToTable("<div class=\"rTable Head\"><strong>"+text+"</strong></div>"+this.endln);			
     }
 
 
     insertTableDivCol(text){
         console.log("---insertTableDivCol()---");
-        this.addStrToTable("<div class=\"rTableCell\">"+text+"</div>"+this.endln);	
+        this.addStrToTable("<div class=\"rTable Cell\">"+text+"</div>"+this.endln);	
     }
 
     endTableDiv(){
