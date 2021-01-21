@@ -2,40 +2,36 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <meta name="Generator" content="EditPlus�">
+  <meta name="Generator" content="EditPlus">
   <meta name="Author" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
+  <link href="css/boostrap/bootstrap.min.css"  rel="stylesheet">
+  <script src="js/boostrap/bootstrap.bundle.min.js"></script>
+
+
+  
   <link rel="STYLESHEET" href="css/default.css" type="text/css">
-  <title>Mi Web Links</title>
 
+  <title>JStoHTML</title>
 
- 
-	<script src="js/jquery.js"></script>
-	<script src="js/divTableCreator.js"></script>
-	<script src="js/divTableCreatorExtend.js"></script>
+	<script src="js/jQuery/jquery.js"></script>
+	<script src="js/JStoHTML/classBootStrap.js"></script>
+	<script src="js/JStoHTML/config.inc.js"></script>
+	<script src="js/JStoHTML/divTableCreator.js"></script>
+	<script src="js/JStoHTML/divTableCreatorExtend.js"></script>
+	<script src="js/lefPanel.js"></script>
+	<script src="js/centerPanel.js"></script>
+	<script src="js/rightPanel.js"></script>
+
 	<script>
-		
-		divC1 = new divTableCreatorExtend();		
-		divC1.createMultiCol(["nombre","url","test"]);
-		divC1.getEndTable();
-		
-		divC2 = new divTableCreatorExtend();		
-		divC2.createMultiHead(["nombre","url","test"]);
-		divC2.createMultiCol(["nombre","url","test"]);
-		divC2.getEndTable();
-		
-		divC3 = new divTableCreatorExtend();		
-		divC3.createMultiCol(["nombre","url","test"]);
-		divC3.getEndTable();
+		let leftPanel=left.gr();
+		let centPanel=center.gr();
+		let righPanel=right.gr();
 
-		divC4 = new divTableCreatorExtend("hide");		
-		divC4.createMultiCol([divC1.gr(),divC2.gr(),divC3.gr()]);
-		divC4.getEndTable();
+		divC4.createMultiHead(["s|2|"+leftPanel,centPanel,"s|3|"+righPanel]);
 		
-
-
-			console.log(divC3.getHtmlResult());
+			// console.log(divC4.gr());
 			$(document).ready(function(){
 			$('#content2').append(divC4.gr());
 			});
