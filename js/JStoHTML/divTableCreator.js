@@ -68,19 +68,19 @@ class divTableCreator {
     }
 
     iTableTitle(text){        
-        this.addStrToTable('<th scope="col">'+text+'</th>'+this.endln);			
+        this.addStrToTable('<th scope="col"  style="vertical-align:baseline;">'+text+'</th>'+this.endln);			
     }
     iTableTitleSize(text,size){        
-        this.addStrToTable('<th class="col-sm-'+size+'" >'+text+'</th>'+this.endln);			
+        this.addStrToTable('<th class="col-sm-'+size+'"  style="vertical-align:baseline;">'+text+'</th>'+this.endln);			
         
     }
 
     iTableCol(text){        
-        this.addStrToTable("<td>"+text+"</td>"+this.endln);	
+        this.addStrToTable('<td  style="vertical-align:baseline;">'+text+"</td>"+this.endln);	
     }
 
     iTableRowHed(text){        
-        this.addStrToTable('<th scope="row">'+text+'</th>'+this.endln);	
+        this.addStrToTable('<th scope="row"  style="vertical-align:baseline;" >'+text+'</th>'+this.endln);	
     }
 
     iEndTable(){        
